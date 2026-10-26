@@ -34,23 +34,25 @@ export default function Index() {
           source={require('@/assets/images/logo-refuge.png')}
         />
       </Pressable>
-      <Text>Donner un animal</Text>
+      <Text style={styles.texte}>Donner un animal</Text>
       <TextInput
         placeholder="Type"
         value={type}
         onChangeText={setType}
+        style={styles.textinput}
       />
       <TextInput
         placeholder="Nom"
         value={nom}
         onChangeText={setNom}
+        style={styles.textinput}
       />
       <TouchableOpacity
         style={styles.bouton}
         onPress={navigate}>
         <Text>Donner</Text>
       </TouchableOpacity>
-      <Text>EXAMEN DE PAUL BOISSARD</Text>
+      <Text style={styles.texte}>EXAMEN DE PAUL BOISSARD</Text>
     </View >
   );
 }
@@ -72,8 +74,18 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 10,
     alignItems: 'center',
-    marginTop: 24,
+    marginTop: 30,
+    marginBottom: 30,
     fontSize: 16,
     fontWeight: 'bold',
   },
+  texte: {
+    fontSize: 25,
+    fontWeight: "bold"
+  },
+  textinput: {
+    marginTop: 15,
+    marginBottom: 15,
+    borderColor: "#000000",
+  }
 });
