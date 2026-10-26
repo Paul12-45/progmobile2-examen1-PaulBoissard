@@ -14,12 +14,18 @@ export default function Index() {
   const routeur = useRouter()
 
   function navigate() {
-    const objDonation: Donation = {
-      type: type,
-      nom: nom
+    if (!type.trim() || !nom.trim()) {
+      alert("L'un des champs n'est pas rempli.")
+    }
+    else {
+      const objDonation: Donation = {
+        type: type,
+        nom: nom
+      }
+
+      routeur.push({ pathname: "/don", params: objDonation })
     }
 
-    routeur.push({ pathname: "/don", params: objDonation })
   }
 
   function horaire() {
