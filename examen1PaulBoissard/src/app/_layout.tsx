@@ -18,7 +18,8 @@ export default function RootLayout() {
 
 export const styleHeader: NativeStackNavigationOptions = {
   headerStyle: {
-    backgroundColor: "#500e64"
+    backgroundColor: "#500e64",
   },
-  headerTintColor: "#FFFFFF"
+  headerTintColor: "#FFFFFF",
+  headerTitleAlign: "center"
 }
