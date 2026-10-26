@@ -1,10 +1,26 @@
 import { useState } from "react";
+import { useRouter } from "expo-router";
 import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
+
+export type Donation = {
+  type: string,
+  nom: string
+}
 
 export default function Index() {
 
   const [type, setType] = useState<string>('')
   const [nom, setNom] = useState<string>('')
+  const routeur = useRouter()
+
+  function navigate() {
+    const objDonation: Donation = {
+      type: type,
+      nom: nom
+    }
+
+    routeur.push({ pathname: "/don", params: objDonation })
+  }
 
   return (
     <View style={styles.container}>
@@ -25,7 +41,8 @@ export default function Index() {
         onChangeText={setNom}
       />
       <TouchableOpacity
-        style={styles.bouton}>
+        style={styles.bouton}
+        onPress={navigate}>
         <Text>Donner</Text>
       </TouchableOpacity>
       <Text>EXAMEN DE PAUL BOISSARD</Text>

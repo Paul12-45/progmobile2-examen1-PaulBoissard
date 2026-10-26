@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Index() {
+export default function Don() {
   return (
     <View style={styles.container}>
       <Text>Don</Text>
