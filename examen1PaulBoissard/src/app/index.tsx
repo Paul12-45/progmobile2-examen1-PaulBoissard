@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "expo-router";
-import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Pressable } from "react-native";
 
 export type Donation = {
   type: string,
@@ -22,13 +22,18 @@ export default function Index() {
     routeur.push({ pathname: "/don", params: objDonation })
   }
 
+  function horaire() {
+    alert("Ouvert de 8h-21h du lundi au vendredi")
+  }
+
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        resizeMode="contain"
-        source={require('@/assets/images/logo-refuge.png')}
-      />
+      <Pressable onPress={horaire}>
+        <Image
+          resizeMode="contain"
+          source={require('@/assets/images/logo-refuge.png')}
+        />
+      </Pressable>
       <Text>Donner un animal</Text>
       <TextInput
         placeholder="Type"
@@ -46,7 +51,7 @@ export default function Index() {
         <Text>Donner</Text>
       </TouchableOpacity>
       <Text>EXAMEN DE PAUL BOISSARD</Text>
-    </View>
+    </View >
   );
 }
 
