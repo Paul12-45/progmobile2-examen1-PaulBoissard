@@ -8,13 +8,13 @@ export default function Don() {
 
   return (
     <View style={styles.container}>
-      <Text>Nous avons hâte d'accueillir l'animal {animal.nom} de type {animal.type} au refuge. Il s'amusera avec ses nouveaux amis.</Text>
+      <Text style={styles.texte}>Nous avons hâte d'accueillir l'animal {animal.nom} de type {animal.type} au refuge. Il s'amusera avec ses nouveaux amis.</Text>
       <Image
         style={styles.image}
         resizeMode="contain"
         source={require('@/assets/images/merci.png')}
       />
-      <Text>EXAMEN DE PAUL BOISSARD</Text>
+      <Text style={styles.examen}>EXAMEN DE PAUL BOISSARD</Text>
     </View>
   );
 }
@@ -29,6 +29,14 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 250,
     borderRadius: 30,
-    marginBottom: 10
+    marginTop: 250,
+    marginBottom: 250
   },
+  examen: {
+    fontSize: 25,
+    fontWeight: "bold"
+  },
+  texte: {
+    fontSize: 25
+  }
 });
